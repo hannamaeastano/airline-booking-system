@@ -1,9 +1,9 @@
 # Technical Specifications Document
 
 ## 1. Title Page
-- **Project Name**: Simple E-commerce Application
+- **Project Name**: Airline Booking System
 - **Version**: 1.0
-- **Date**: June 20, 2024
+- **Date**: March 6, 2025
 - **Author(s)**: Bootcamp Group
 
 ## 2. Table of Contents
