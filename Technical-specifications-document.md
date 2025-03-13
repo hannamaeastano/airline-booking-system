@@ -12,9 +12,16 @@
 3. [Visual Mockup Reference](#5-visual-mockup-reference)
 4. [Features](#6-features)
 5. [Functional Requirements](#7-functional-requirements)
-# Functional Requirements
+6. [Non-Functional Requirements](#8-non-functional-requirements)
+7. [Data Requirements](#9-data-requirements)
+8. [External Interface Requirements](#10-external-interface-requirements)
+9. [Glossary](#11-glossary)
+10. [Appendices](#12-appendices)
 
-## Use Cases
+
+## 7 Functional Requirements
+
+### Use Cases
 
 ### Use Case 1: User Registration
 **Title:** User Registration  
@@ -59,9 +66,9 @@
 **Error Handling:** Display appropriate error messages for incorrect login details, duplicate emails, or invalid input fields  
 
 ### Feature 2: Flight Management
-**Description:** Administrators should be able to manage flight records, including details such as airline name, aircraft model, and flight status.  
+**Description:** Administrators should be able to manage flight records, including details such as airline name and flight status.  
 **Priority:** High  
-**Inputs:** Flight details (airline name, aircraft model, departure/arrival cities, times, status)  
+**Inputs:** Flight details (airline name, departure/arrival cities, times, status)  
 **Processing:** Validate flight data, update flight schedules, ensure consistency with airport records  
 **Outputs:** Updated flight details, confirmation messages, available flight listings  
 **Error Handling:** Prevent duplicate entries, validate date/time formats, restrict invalid status changes  
@@ -83,7 +90,7 @@
 **Error Handling:** Notify users of unavailable seats, prevent double booking  
 
 ### Feature 5: Payment Processing
-**Description:** Users must be able to pay for bookings using different payment methods.  
+**Description:** Users must be able to pay for bookings using online payment methods.  
 **Priority:** High  
 **Inputs:** Booking ID, amount, payment method  
 **Processing:** Validate payment method, process transaction, update payment status  
@@ -114,26 +121,11 @@
 **Outputs:** Alert messages, email confirmations  
 **Error Handling:** Ensure timely notification delivery, log errors  
 
-### Feature 9: Administrative Controls
-**Description:** Admins should have access to manage users, flights, and bookings.  
-**Priority:** High  
-**Inputs:** User, flight, booking, and payment data  
-**Processing:** Manage system records, generate reports  
-**Outputs:** Updated data, analytical reports  
-**Error Handling:** Prevent unauthorized changes, ensure data consistency  
-
-### Feature 10: Security and Compliance
+### Feature 9: Security and Compliance
 **Description:** The system must ensure secure user authentication and transaction handling.  
 **Priority:** High  
 **Inputs:** User credentials, payment details  
 **Processing:** Encrypt sensitive data, enforce access control policies  
 **Outputs:** Secure authentication, transaction logs  
 **Error Handling:** Block unauthorized access, notify users of security breaches  
-
-
-6. [Non-Functional Requirements](#8-non-functional-requirements)
-7. [Data Requirements](#9-data-requirements)
-8. [External Interface Requirements](#10-external-interface-requirements)
-9. [Glossary](#11-glossary)
-10. [Appendices](#12-appendices)
 
