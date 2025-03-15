@@ -361,19 +361,19 @@ Administrators can:
 
   #### Risk Assessment
   - **Risk 1: Third-Party API Failures**
-   - **Description**: The system relies on third-party APIs for real-time flight schedules and payment processing.
-   - **Mitigation**: Implement fallback mechanisms for critical features, such as displaying cached flight data in case of API downtime.
+    - **Description**: The system relies on third-party APIs for real-time flight schedules and payment processing.
+    - **Mitigation**: Implement fallback mechanisms for critical features, such as displaying cached flight data in case of API downtime.
    
   - **Risk 2: Payment Gateway Failures**
-   - **Description**: Payment processing may fail due to external system issues.
-   - **Mitigation**: Implement retry logic for payment processing, and notify users of payment issues.
+    - **Description**: Payment processing may fail due to external system issues.
+    - **Mitigation**: Implement retry logic for payment processing, and notify users of payment issues.
 
   #### Deployment Plan
- - **Deployment Steps**:
-   1. Set up cloud infrastructure on AWS using EC2 instances.
-   2. Deploy the Node.js application to the EC2 instance.
-   3. Set up MongoDB Atlas for production data storage.
-   4. Implement continuous integration and deployment using GitHub Actions.
+  - **Deployment Steps**:
+     1. Set up cloud infrastructure on AWS using EC2 instances.
+     2. Deploy the Node.js application to the EC2 instance.
+     3. Set up MongoDB Atlas for production data storage.
+     4. Implement continuous integration and deployment using GitHub Actions.
    
   #### User Documentation
  - **User Manual**:
