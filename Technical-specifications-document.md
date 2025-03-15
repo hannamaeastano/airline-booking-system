@@ -380,5 +380,5 @@ Administrators can:
     - **Booking a Flight**: A user can book a flight by selecting the desired destination, date, and time.
     - **Changing a Booking**: Users can update booking details such as seat selection or flight date via the "My Bookings" page.
       
-  #### Revision History**: 
+  #### Revision History: 
   - **v1.0**: Initial version - March 6, 2025
