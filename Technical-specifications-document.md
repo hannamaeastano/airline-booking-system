@@ -56,235 +56,247 @@
 - **Payment Gateway Integration**: Users can securely make payments through an integrated payment gateway.
 - **Email Notifications**: Users receive booking confirmations and updates via email.
 
-## 7 Functional Requirements
+## 7. Functional Requirements
 
 ### Use Cases
 
-### Use Case 1: User Registration
+#### Use Case 1: User Registration
 **Title:** User Registration  
 **Description:** Allows a new user to create an account by providing necessary details.  
 **Actors:** User  
-**Preconditions:** User must have a valid email and unique credentials.  
-**Postconditions:** A new user account is created and stored in the system.  
-**Main Flow:**  
+**Preconditions:**  
+- User must have a valid email.  
+- Credentials must be unique.  
+**Postconditions:**  
+- A new user account is created and stored in the system.  
+
+#### Main Flow:
 1. User navigates to the registration page.  
 2. User enters name, email, password, phone number, and selects user type.  
 3. System validates inputs and checks for duplicate email.  
-4. System encrypts password and stores user data.  
+4. System encrypts the password and stores user data.  
 5. System confirms successful registration.  
-**Alternate Flows:**  
+
+#### Alternate Flows:
 - If email is already registered, the system prompts the user to use another email.  
 - If input validation fails, the system displays an error message.  
 
-### Use Case 2: Flight Booking
+---
+
+#### Use Case 2: Flight Booking
 **Title:** Flight Booking  
 **Description:** Enables users to search and book flights.  
 **Actors:** User  
-**Preconditions:** User must be logged in.  
-**Postconditions:** A booking record is created and linked to the user.  
-**Main Flow:**  
+**Preconditions:**  
+- User must be logged in.  
+**Postconditions:**  
+- A booking record is created and linked to the user.  
+
+#### Main Flow:
 1. User searches for available flights.  
 2. User selects a flight and a seat.  
 3. System verifies seat availability.  
 4. User confirms booking.  
 5. System updates booking status to "Pending Payment."  
-**Alternate Flows:**  
-- If seat is unavailable, the system prompts the user to select another.  
-- If flight is fully booked, the system displays an alternative flight suggestion.  
 
-## System Features
+#### Alternate Flows:
+- If the seat is unavailable, the system prompts the user to select another.  
+- If the flight is fully booked, the system displays an alternative flight suggestion.  
 
-### Feature 1: User Management
+---
+
+### 2. System Features
+
+#### Feature 1: User Management
 **Description:** The system must allow users to register, log in, update profiles, and manage account details.  
 **Priority:** High  
-**Inputs:** User name, email, password, phone number, user type (Passenger/Admin)  
-**Processing:** Validate user credentials, store encrypted passwords, authenticate login attempts, update user details  
-**Outputs:** Successful login/registration, error messages for invalid credentials  
-**Error Handling:** Display appropriate error messages for incorrect login details, duplicate emails, or invalid input fields  
 
-### Feature 2: Flight Management
+#### Details:
+- **Inputs:** User name, email, password, phone number, user type (Passenger/Admin).  
+- **Processing:** Validate user credentials, store encrypted passwords, authenticate login attempts, update user details.  
+- **Outputs:** Successful login/registration, error messages for invalid credentials.  
+- **Error Handling:** Display appropriate error messages for incorrect login details, duplicate emails, or invalid input fields.  
+
+---
+
+#### Feature 2: Flight Management
 **Description:** Administrators should be able to manage flight records, including details such as airline name and flight status.  
 **Priority:** High  
-**Inputs:** Flight details (airline name, departure/arrival cities, times, status)  
-**Processing:** Validate flight data, update flight schedules, ensure consistency with airport records  
-**Outputs:** Updated flight details, confirmation messages, available flight listings  
-**Error Handling:** Prevent duplicate entries, validate date/time formats, restrict invalid status changes  
 
-### Feature 3: Airport Management
+#### Details:
+- **Inputs:** Flight details (airline name, departure/arrival cities, times, status).  
+- **Processing:** Validate flight data, update flight schedules, ensure consistency with airport records.  
+- **Outputs:** Updated flight details, confirmation messages, available flight listings.  
+- **Error Handling:** Prevent duplicate entries, validate date/time formats, restrict invalid status changes.  
+
+---
+
+#### Feature 3: Airport Management
 **Description:** The system should maintain a database of airports linked to flight information.  
 **Priority:** Medium  
-**Inputs:** Airport name, location, country code  
-**Processing:** Associate airports with flights, ensure correct country codes  
-**Outputs:** List of airports, associated flight schedules  
-**Error Handling:** Validate airport details, restrict duplicate airport entries  
 
-### Feature 4: Booking Management
+#### Details:
+- **Inputs:** Airport name, location, country code.  
+- **Processing:** Associate airports with flights, ensure correct country codes.  
+- **Outputs:** List of airports, associated flight schedules.  
+- **Error Handling:** Validate airport details, restrict duplicate airport entries.  
+
+---
+
+#### Feature 4: Booking Management
 **Description:** Users must be able to book flights, select seats, and track booking status.  
 **Priority:** High  
-**Inputs:** User ID, flight ID, seat number  
-**Processing:** Verify seat availability, assign booking status, update booking records  
-**Outputs:** Booking confirmation, assigned seat details  
-**Error Handling:** Notify users of unavailable seats, prevent double booking  
 
-### Feature 5: Payment Processing
+#### Details:
+- **Inputs:** User ID, flight ID, seat number.  
+- **Processing:** Verify seat availability, assign booking status, update booking records.  
+- **Outputs:** Booking confirmation, assigned seat details.  
+- **Error Handling:** Notify users of unavailable seats, prevent double booking.  
+
+---
+
+#### Feature 5: Payment Processing
 **Description:** Users must be able to pay for bookings using online payment methods.  
 **Priority:** High  
-**Inputs:** Booking ID, amount, payment method  
-**Processing:** Validate payment method, process transaction, update payment status  
-**Outputs:** Payment confirmation, updated booking status  
-**Error Handling:** Handle failed transactions, display payment errors, retry payment options  
 
-### Feature 6: Booking and Payment Status Management
+#### Details:
+- **Inputs:** Booking ID, amount, payment method.  
+- **Processing:** Validate payment method, process transaction, update payment status.  
+- **Outputs:** Payment confirmation, updated booking status.  
+- **Error Handling:** Handle failed transactions, display payment errors, retry payment options.  
+
+---
+
+#### Feature 6: Booking and Payment Status Management
 **Description:** The system must update booking and payment statuses accordingly.  
 **Priority:** High  
-**Inputs:** Booking status, payment status  
-**Processing:** Change status based on successful/failed transactions, notify users  
-**Outputs:** Updated booking/payment status  
-**Error Handling:** Prevent inconsistencies in booking confirmations, retry failed payments  
 
-### Feature 7: Search and Filter Functionality
+#### Details:
+- **Inputs:** Booking status, payment status.  
+- **Processing:** Change status based on successful/failed transactions, notify users.  
+- **Outputs:** Updated booking/payment status.  
+- **Error Handling:** Prevent inconsistencies in booking confirmations, retry failed payments.  
+
+---
+
+#### Feature 7: Search and Filter Functionality
 **Description:** Users should be able to search for flights based on multiple criteria.  
 **Priority:** Medium  
-**Inputs:** Departure/arrival city, airline name, flight status  
-**Processing:** Query flights based on filters, return matching results  
-**Outputs:** Filtered flight search results  
-**Error Handling:** Inform users if no results match criteria  
 
-### Feature 8: Notifications and Alerts
+#### Details:
+- **Inputs:** Departure/arrival city, airline name, flight status.  
+- **Processing:** Query flights based on filters, return matching results.  
+- **Outputs:** Filtered flight search results.  
+- **Error Handling:** Inform users if no results match criteria.  
+
+---
+
+#### Feature 8: Notifications and Alerts
 **Description:** Users should receive updates on bookings, payments, and flight changes.  
 **Priority:** Medium  
-**Inputs:** Booking status changes, flight updates  
-**Processing:** Send notifications via email/SMS  
-**Outputs:** Alert messages, email confirmations  
-**Error Handling:** Ensure timely notification delivery, log errors  
 
-### Feature 9: Security and Compliance
+#### Details:
+- **Inputs:** Booking status changes, flight updates.  
+- **Processing:** Send notifications via email/SMS.  
+- **Outputs:** Alert messages, email confirmations.  
+- **Error Handling:** Ensure timely notification delivery, log errors.  
+
+---
+
+#### Feature 9: Security and Compliance
 **Description:** The system must ensure secure user authentication and transaction handling.  
 **Priority:** High  
-**Inputs:** User credentials, payment details  
-**Processing:** Encrypt sensitive data, enforce access control policies  
-**Outputs:** Secure authentication, transaction logs  
-**Error Handling:** Block unauthorized access, notify users of security breaches  
+
+#### Details:
+- **Inputs:** User credentials, payment details.  
+- **Processing:** Encrypt sensitive data, enforce access control policies.  
+- **Outputs:** Secure authentication, transaction logs.  
+- **Error Handling:** Block unauthorized access, notify users of security breaches.  
 
 
-## **8. Non-Functional Requirements**
-1. **Performance**  
-   - The system should handle at least 1000 concurrent users without performance degradation.  
-   - Search queries for flights should return results within 2 seconds under normal load conditions.  
-   - The system should be optimized for fast response times (page loads under 3 seconds).  
-   - Payments should be processed within 5 seconds with real-time booking confirmation.  
-   - The database should support millions of records efficiently with indexing for fast lookups.  
+## 8. Non-Functional Requirements
 
-2. **Security**  
-   - **User Authentication**: Use hashed passwords to prevent password leaks.  
-   - **Data Encryption**: All sensitive data (passwords, payment details) must be encrypted.  
-   - **Access Control**:  
-     - Passengers can book flights and manage payments.  
-   - **Logging & Monitoring**:  
-     - The system should maintain audit logs for booking, payment, and flight updates.  
-     - Implement real-time fraud detection for suspicious activities.  
+### **Performance**  
+  - **Concurrent Users**: The system should handle at least **1,000 concurrent users** without performance degradation.  
+  - **Search Queries**: Flight search queries should return results **within 2 seconds** under normal load conditions.  
+  - **Page Load Times**: Pages should load in **under 3 seconds** for optimal user experience.  
+  - **Payment Processing**: Payments should complete **within 5 seconds**, with real-time booking confirmation.  
+  - **Database Efficiency**: The database should support **millions of records efficiently**, using indexing for fast lookups.  
 
-3. **Usability**  
-   - The user interface (UI) should be intuitive and user-friendly, following Material Design or Bootstrap guidelines.  
-   - Mobile responsiveness: The system should work on desktops, tablets, and smartphones.  
-   - User-friendly search filters: Users can filter flights by date, price, airline, and duration.  
-   - Minimal clicks to book a flight: A user should be able to complete a booking within 5 steps.  
+### **Security**  
+  - **User Authentication**: Use **hashed passwords** to prevent leaks.  
+  - **Data Encryption**: Encrypt all sensitive data (**passwords, payment details, etc.**).  
+  - **Access Control**:  
+    - **Passengers**: Can book flights and manage payments.  
+  - **Logging & Monitoring**:  
+    - **Audit Logs**: Maintain logs for booking, payment, and flight updates.  
+    - **Fraud Detection**: Implement **real-time fraud detection** for suspicious activities.  
 
-4. **Reliability**  
-   - The system must have 99.9% uptime to ensure availability for users at all times.  
-   - Database backups should be performed every 24 hours, with incremental backups every hour.  
-   - The system should have failover mechanisms to handle server crashes without downtime.  
-   - If a payment fails due to network issues, it should be automatically retried within 30 seconds.  
+### **Usability**  
+  - **User Interface**: The UI should be **intuitive and user-friendly**, following **Material Design** or **Bootstrap** guidelines.  
+  - **Mobile Responsiveness**: The system should work seamlessly on **desktops, tablets, and smartphones**.  
+  - **Search Filters**: Users should be able to filter flights by **date, price, airline, and duration**.  
+  - **Booking Efficiency**: A user should be able to complete a booking in **5 steps or fewer**.  
 
-5. **Supportability**  
-   - The system should be easily maintainable, with modular code for quick updates and debugging.  
-   - Logs should be stored and monitored for troubleshooting and analytics.  
-   - Admins should have access to a dashboard for system health monitoring.  
+### **Reliability**  
+  - **System Uptime**: The system must maintain **99.9% uptime** for high availability.  
+  - **Database Backups**: Perform full backups **every 24 hours**, with **incremental backups** every hour.  
+  - **Failover Mechanisms**: Ensure server crashes do not cause downtime.  
+  - **Payment Recovery**: If a **payment fails** due to network issues, the system should **automatically retry** within 30 seconds.  
+
+### **Supportability**  
+  - **Maintainability**: The system should be **easily maintainable**, with **modular code** for quick updates and debugging.  
+  - **Logging & Monitoring**: Logs should be **stored and monitored** for troubleshooting and analytics.  
+  - **Admin Dashboard**: Admins should have access to a **dashboard** for system health monitoring.
 
 
-## **9. Data Requirements**
-### **9.1 Data Models**
+
+## 9. Data Requirements
+### 9.1 Data Models
 **Airline Booking System – ERD**  
-Figure 9.1.1  
+- **Link or screenshot**: ![ERD](https://drive.google.com/file/d/1JKiZTALPGdmQYtME4Ncy74M55hmytA66/view?usp=sharing)
 
-### **9.2 Database Requirements**
-**Tables and Relationships**  
-The database consists of the following tables:  
+### 9.2 Database Requirements
 
-**User**  
-- `user_id` (PK)  
-- `name`  
-- `email`  
-- `password`  
-- `phone_number`  
-- `user_type` (Passenger/Admin)  
-
-**Flight**  
-- `flight_id` (PK)  
-- `airline_name`  
-- `aircraft_model` (New, replaces Aircraft entity)  
-- `departure_city`  
-- `arrival_city`  
-- `departure_airport_id` (FK)  
-- `arrival_airport_id` (FK)  
-- `departure_time`  
-- `arrival_time`  
-- `status` (On-time, Delayed, Cancelled)  
-
-**Booking**  
-- `booking_id` (PK)  
-- `user_id` (FK)  
-- `flight_id` (FK)  
-- `seat_number`  
-- `booking_status` (Confirmed, Pending, Cancelled)  
-- `payment_status` (Paid, Unpaid)  
-
-**Payment**  
-- `payment_id` (PK)  
-- `booking_id` (FK)  
-- `amount`  
-- `payment_method` (Credit Card, PayPal, etc.)  
-- `transaction_status` (Success, Failed)  
-
-**Airport**  
-- `airport_id` (PK)  
-- `airport_name`  
-- `location`  
-- `country_code`  
+#### **Tables and Relationships**  
+The database includes the following relationships between tables:
 
 ### **Relationships**
-- **User to Booking**: 1:N → a user can have multiple bookings, but each booking belongs to one user.  
-- **Flight to Booking**: 1:N → a flight can have multiple bookings, but each booking belongs to one flight.  
-- **Booking to Payment**: 1:1 → each booking has one payment record.  
-- **Flight to Airport**: 1:N for `departure_airport_id` and 1:N for `arrival_airport_id`.  
+- **User to Booking**: 1:N → A user can have multiple bookings, but each booking belongs to one user.  
+- **Flight to Booking**: 1:N → A flight can have multiple bookings, but each booking belongs to one flight.  
+- **Booking to Payment**: 1:1 → Each booking has one payment record.  
+- **Flight to Airport**: 1:N for `departure_airport_id` and 1:N for `arrival_airport_id`.
 
-### **9.3 Data Storage and Retrieval**
+### 9.3 Data Storage and Retrieval
+
 #### **Data Storage**
-- The system uses a NoSQL database such as MongoDB to ensure flexible data management, scalability, and efficient document-based queries.  
-- Tables are designed with primary keys (PK) to uniquely identify records and foreign keys (FK) to maintain referential integrity between related tables.  
-- Indexes are applied to frequently queried columns (`user_id`, `flight_id`, `booking_id`) to improve search performance and optimize query execution.  
-- Data is stored in a normalized structure to minimize redundancy and enhance scalability.  
+- The system utilizes a NoSQL database, such as MongoDB, to ensure flexibility, scalability, and efficient document-based queries.  
+- Tables are designed with **primary keys (PK)** to uniquely identify records and **foreign keys (FK)** to maintain referential integrity between related tables.  
+- **Indexes** are applied to frequently queried fields (`user_id`, `flight_id`, `booking_id`) to optimize search performance.  
+- Data is stored in a normalized structure to minimize redundancy and enhance scalability.
 
 #### **Data Retrieval**
-**User Queries**  
-Users can:  
+
+##### **User Queries**  
+Users can:
 - Search for flights by specifying departure and arrival cities, dates, and preferred airlines.  
-- View their booking history with details on past and upcoming flights.  
-- Check booking status (Confirmed, Pending, or Cancelled).  
+- View booking history, with details on past and upcoming flights.  
+- Check booking status (Confirmed, Pending, or Cancelled).
 
-**Admin Queries**  
-Administrators can:  
-- Update flight statuses (On-time, Delayed, or Cancelled) to reflect real-time changes.  
-- Manage payments and refunds, ensuring successful transactions and handling disputes.  
+##### **Admin Queries**  
+Administrators can:
+- Update flight statuses (On-time, Delayed, or Cancelled) in real time.  
+- Manage payments and refunds, ensuring successful transactions and handling disputes.
 
-**Booking Process**  
-1. **Flight Selection**: Users browse available flights based on search filters.  
-2. **Seat Selection & Confirmation**: Users choose a preferred seat and confirm the booking.  
-3. **Payment Processing**: The system records payment details and updates the booking status.  
-4. **Final Confirmation**: A successful payment updates the booking to "Confirmed," while a failed transaction keeps it as "Pending."  
+#### **Booking Process**
+1. **Flight Selection**: Users browse available flights using search filters.  
+2. **Seat Selection & Confirmation**: Users select their preferred seat and confirm the booking.  
+3. **Payment Processing**: The system records payment details and updates booking status.  
+4. **Final Confirmation**: A successful payment updates the booking to "Confirmed," while a failed transaction keeps it as "Pending."
 
 #### **Optional Enhancements**
-- Caching could be used to store frequently accessed flight schedules for faster lookups.  
-- Stored Procedures could be implemented for complex queries like flight availability checks to reduce query execution time.  
-- Data Archiving policies can be set up to handle old booking records, keeping the database efficient.
+- **Caching** could be used to store frequently accessed flight schedules for faster lookups.  
+- **Stored Procedures** could be implemented for complex queries like flight availability checks to reduce query execution time.  
+- **Data Archiving** policies can be set up to handle old booking records, ensuring the database remains efficient.
+
 
