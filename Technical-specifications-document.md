@@ -25,7 +25,7 @@
 - **Definitions, Acronyms, and Abbreviations**: 
   - **PNR**: Passenger Name Record
   - **API**: Application Programming Interface
-  - **OTA**: Online Travel Agent 
+  - **ERD**: Entity-Relationship Diagram. 
 - **References**: None
 
 ## 4. Overall Description
@@ -56,3 +56,5 @@
 - **Flight Selection and Booking**: Users can select available flights, choose seats, and book tickets.
 - **Payment Gateway Integration**: Users can securely make payments through an integrated payment gateway.
 - **Email Notifications**: Users receive booking confirmations and updates via email.
+
+
