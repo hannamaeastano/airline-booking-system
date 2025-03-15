@@ -309,7 +309,7 @@ Administrators can:
 
 ## 12. Appendices
 - **Supporting Information**: 
-  - #### API Documentation
+  #### API Documentation
   - **Authentication API**: Documentation for user registration, login, and JWT authentication.
   - **POST /api/register**: Registers a new user.
   - **POST /api/login**: Authenticates a user and returns a JWT.
@@ -327,8 +327,8 @@ Administrators can:
     }
     ```
 
-  - #### Code Snippets
-  - **Flight Search Function**:
+  #### Code Snippets
+    - **Flight Search Function**:
     ```javascript
     function searchFlights(departureCity, arrivalCity, date) {
       return Flight.find({
@@ -339,8 +339,8 @@ Administrators can:
     }
     ```
     This function allows users to search for available flights based on city, arrival, and departure date.
-    
-  - ### Testing Plans and Test Cases
+
+  #### Testing Plans and Test Cases
   - **Test Case 1: User Registration**
    - **Description**: Ensure that a new user can successfully register.
    - **Steps**:
@@ -350,7 +350,7 @@ Administrators can:
    - **Expected Result**: The user is created and redirected to the login page.
    - **Pass/Fail Criteria**: Test passes if the user is successfully created and the confirmation message appears.
 
- - **Test Case 2: Payment Processing**
+  - **Test Case 2: Payment Processing**
    - **Description**: Test successful payment processing.
    - **Steps**:
      1. Select a flight and proceed to the payment page.
@@ -359,7 +359,7 @@ Administrators can:
    - **Expected Result**: Payment is processed successfully, and booking status is updated to "Confirmed".
    - **Pass/Fail Criteria**: Test passes if payment is processed, and the confirmation page is displayed.
 
- - ### Risk Assessment
+  #### Risk Assessment
  - **Risk 1: Third-Party API Failures**
    - **Description**: The system relies on third-party APIs for real-time flight schedules and payment processing.
    - **Mitigation**: Implement fallback mechanisms for critical features, such as displaying cached flight data in case of API downtime.
@@ -368,14 +368,14 @@ Administrators can:
    - **Description**: Payment processing may fail due to external system issues.
    - **Mitigation**: Implement retry logic for payment processing, and notify users of payment issues.
 
- - ### Deployment Plan
+  #### Deployment Plan
  - **Deployment Steps**:
    1. Set up cloud infrastructure on AWS using EC2 instances.
    2. Deploy the Node.js application to the EC2 instance.
    3. Set up MongoDB Atlas for production data storage.
    4. Implement continuous integration and deployment using GitHub Actions.
    
- - ### User Documentation
+  #### User Documentation
  - **User Manual**:
    - **Booking a Flight**: A user can book a flight by selecting the desired destination, date, and time.
    - **Changing a Booking**: Users can update booking details such as seat selection or flight date via the "My Bookings" page.
