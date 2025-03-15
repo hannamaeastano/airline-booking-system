@@ -167,6 +167,41 @@
 **Error Handling:** Block unauthorized access, notify users of security breaches  
 
 
+## **8. Non-Functional Requirements**
+1. **Performance**  
+   - The system should handle at least 1000 concurrent users without performance degradation.  
+   - Search queries for flights should return results within 2 seconds under normal load conditions.  
+   - The system should be optimized for fast response times (page loads under 3 seconds).  
+   - Payments should be processed within 5 seconds with real-time booking confirmation.  
+   - The database should support millions of records efficiently with indexing for fast lookups.  
+
+2. **Security**  
+   - **User Authentication**: Use hashed passwords to prevent password leaks.  
+   - **Data Encryption**: All sensitive data (passwords, payment details) must be encrypted.  
+   - **Access Control**:  
+     - Passengers can book flights and manage payments.  
+   - **Logging & Monitoring**:  
+     - The system should maintain audit logs for booking, payment, and flight updates.  
+     - Implement real-time fraud detection for suspicious activities.  
+
+3. **Usability**  
+   - The user interface (UI) should be intuitive and user-friendly, following Material Design or Bootstrap guidelines.  
+   - Mobile responsiveness: The system should work on desktops, tablets, and smartphones.  
+   - User-friendly search filters: Users can filter flights by date, price, airline, and duration.  
+   - Minimal clicks to book a flight: A user should be able to complete a booking within 5 steps.  
+
+4. **Reliability**  
+   - The system must have 99.9% uptime to ensure availability for users at all times.  
+   - Database backups should be performed every 24 hours, with incremental backups every hour.  
+   - The system should have failover mechanisms to handle server crashes without downtime.  
+   - If a payment fails due to network issues, it should be automatically retried within 30 seconds.  
+
+5. **Supportability**  
+   - The system should be easily maintainable, with modular code for quick updates and debugging.  
+   - Logs should be stored and monitored for troubleshooting and analytics.  
+   - Admins should have access to a dashboard for system health monitoring.  
+
+
 ## **9. Data Requirements**
 ### **9.1 Data Models**
 **Airline Booking System – ERD**  
