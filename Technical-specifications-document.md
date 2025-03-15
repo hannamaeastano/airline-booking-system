@@ -81,8 +81,6 @@
 - If email is already registered, the system prompts the user to use another email.  
 - If input validation fails, the system displays an error message.  
 
----
-
 #### Use Case 2: Flight Booking
 **Title:** Flight Booking  
 **Description:** Enables users to search and book flights.  
@@ -103,9 +101,7 @@
 - If the seat is unavailable, the system prompts the user to select another.  
 - If the flight is fully booked, the system displays an alternative flight suggestion.  
 
----
-
-### 2. System Features
+### System Features
 
 #### Feature 1: User Management
 **Description:** The system must allow users to register, log in, update profiles, and manage account details.  
@@ -117,8 +113,6 @@
 - **Outputs:** Successful login/registration, error messages for invalid credentials.  
 - **Error Handling:** Display appropriate error messages for incorrect login details, duplicate emails, or invalid input fields.  
 
----
-
 #### Feature 2: Flight Management
 **Description:** Administrators should be able to manage flight records, including details such as airline name and flight status.  
 **Priority:** High  
@@ -128,8 +122,6 @@
 - **Processing:** Validate flight data, update flight schedules, ensure consistency with airport records.  
 - **Outputs:** Updated flight details, confirmation messages, available flight listings.  
 - **Error Handling:** Prevent duplicate entries, validate date/time formats, restrict invalid status changes.  
-
----
 
 #### Feature 3: Airport Management
 **Description:** The system should maintain a database of airports linked to flight information.  
@@ -141,8 +133,6 @@
 - **Outputs:** List of airports, associated flight schedules.  
 - **Error Handling:** Validate airport details, restrict duplicate airport entries.  
 
----
-
 #### Feature 4: Booking Management
 **Description:** Users must be able to book flights, select seats, and track booking status.  
 **Priority:** High  
@@ -152,8 +142,6 @@
 - **Processing:** Verify seat availability, assign booking status, update booking records.  
 - **Outputs:** Booking confirmation, assigned seat details.  
 - **Error Handling:** Notify users of unavailable seats, prevent double booking.  
-
----
 
 #### Feature 5: Payment Processing
 **Description:** Users must be able to pay for bookings using online payment methods.  
@@ -165,8 +153,6 @@
 - **Outputs:** Payment confirmation, updated booking status.  
 - **Error Handling:** Handle failed transactions, display payment errors, retry payment options.  
 
----
-
 #### Feature 6: Booking and Payment Status Management
 **Description:** The system must update booking and payment statuses accordingly.  
 **Priority:** High  
@@ -176,8 +162,6 @@
 - **Processing:** Change status based on successful/failed transactions, notify users.  
 - **Outputs:** Updated booking/payment status.  
 - **Error Handling:** Prevent inconsistencies in booking confirmations, retry failed payments.  
-
----
 
 #### Feature 7: Search and Filter Functionality
 **Description:** Users should be able to search for flights based on multiple criteria.  
@@ -189,8 +173,6 @@
 - **Outputs:** Filtered flight search results.  
 - **Error Handling:** Inform users if no results match criteria.  
 
----
-
 #### Feature 8: Notifications and Alerts
 **Description:** Users should receive updates on bookings, payments, and flight changes.  
 **Priority:** Medium  
@@ -200,8 +182,6 @@
 - **Processing:** Send notifications via email/SMS.  
 - **Outputs:** Alert messages, email confirmations.  
 - **Error Handling:** Ensure timely notification delivery, log errors.  
-
----
 
 #### Feature 9: Security and Compliance
 **Description:** The system must ensure secure user authentication and transaction handling.  
@@ -250,11 +230,10 @@
   - **Admin Dashboard**: Admins should have access to a **dashboard** for system health monitoring.
 
 
-
 ## 9. Data Requirements
 ### 9.1 Data Models
 **Airline Booking System – ERD**  
-- **Link or screenshot**: ![ERD](https://drive.google.com/file/d/1JKiZTALPGdmQYtME4Ncy74M55hmytA66/view?usp=sharing)
+- **Link or screenshot**: [ERD](https://drive.google.com/file/d/1JKiZTALPGdmQYtME4Ncy74M55hmytA66/view?usp=sharing)
 
 ### 9.2 Database Requirements
 
@@ -299,4 +278,27 @@ Administrators can:
 - **Stored Procedures** could be implemented for complex queries like flight availability checks to reduce query execution time.  
 - **Data Archiving** policies can be set up to handle old booking records, ensuring the database remains efficient.
 
+## 10. External Interface Requirements
+
+- **User Interfaces**:
+	- Registration/Login page – Allows users to create an account and log in securely.
+	- Book Flight page – Enables users to search and book flights.
+	- Select Seat page – Provides seat selection during booking.
+	- My Bookings page – Displays a list of a user’s current and past bookings.
+	- Final Confirmation Page – Shows booking details before finalizing the purchase.
+	- Flight Details page – Displays flight schedules, status, and relevant information.
+	- Payment page – Handles the payment process for flight bookings.
+- **API Interfaces**:
+	- Authentication API: Handles user registration, login, and authentication using JWT.
+	- Flight Booking API: Manages flight reservations and stores booking data in MongoDB.
+	- User Booking API: Retrieves and manages a user's bookings.
+	- Flight Information API: Provides real-time flight schedules and status (OpenSky Network API or AviationStack API).
+	- Payment Gateway API: Integrates with PayPal REST API or Stripe SDK.
+- **Hardware Interfaces**:
+	- None required.
+- **Software Interfaces**:
+	- Database (MongoDB Atlas) – Stores user, flight, booking, and payment data.
+	- Cloud Storage (AWS) – Stores ticket PDFs, receipts, and user profile pictures.
+	- Messaging & Notifications (SendGrid, Twilio API) – Sends booking confirmations via email or SMS.
+	- External Airline Systems (OpenSky Network API or AviationStack API) – Fetches flight availability and pricing.
 
