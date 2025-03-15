@@ -360,11 +360,11 @@ Administrators can:
    - **Pass/Fail Criteria**: Test passes if payment is processed, and the confirmation page is displayed.
 
   #### Risk Assessment
- - **Risk 1: Third-Party API Failures**
+  - **Risk 1: Third-Party API Failures**
    - **Description**: The system relies on third-party APIs for real-time flight schedules and payment processing.
    - **Mitigation**: Implement fallback mechanisms for critical features, such as displaying cached flight data in case of API downtime.
    
- - **Risk 2: Payment Gateway Failures**
+  - **Risk 2: Payment Gateway Failures**
    - **Description**: Payment processing may fail due to external system issues.
    - **Mitigation**: Implement retry logic for payment processing, and notify users of payment issues.
 
