@@ -193,26 +193,14 @@
 **Airline Booking System – ERD**  
 - **Link or screenshot**: [ERD](https://drive.google.com/file/d/16CtDjVy6U9NiLjfV0-GbCNmMEO_HEG8k/view?usp=sharing)
 
-### User
-User: { user_id, first_name, last_name, email, password, phone_number, date_of_birth, user_type, created_on, updated_on }
 
-### Flight
-Flight: { flight_id, airline_id, airline_name, aircraft_model, departure_city, arrival_city, departure_date, arrival_date, price, created_on, updated_on }
-
-### Booking
-Booking: { booking_id, user_id, flight_id, booking_date, flight_type, total_amount, seat_number, payment_status, created_on, updated_on }
-
-### Passenger
-Passenger: { passenger_id, booking_id, user_id, first_name, last_name, email, mobile_number, baggage_details, other_details }
-
-### Ticket
-Ticket: { ticket_id, passenger_id, booking_id, seat_number, payment_method, payment_status, created_on, updated_on }
-
-### Payment
-Payment: { payment_id, booking_id, amount, payment_date, payment_method, transaction_status, created_on, updated_on }
-
-### Airline
-Airline: { airline_id, name, logo, email, phone_number, address }
+- **User:** { user_id, first_name, last_name, email, password, phone_number, date_of_birth, user_type, created_on, updated_on }  
+- **Flight:** { flight_id, airline_id, airline_name, aircraft_model, departure_city, arrival_city, departure_date, arrival_date, price, created_on, updated_on }  
+- **Booking:** { booking_id, user_id, flight_id, booking_date, flight_type, total_amount, seat_number, payment_status, created_on, updated_on }  
+- **Passenger:** { passenger_id, booking_id, user_id, first_name, last_name, email, mobile_number, baggage_details, other_details }  
+- **Ticket:** { ticket_id, passenger_id, booking_id, seat_number, payment_method, payment_status, created_on, updated_on }  
+- **Payment:** { payment_id, booking_id, amount, payment_date, payment_method, transaction_status, created_on, updated_on }  
+- **Airline:** { airline_id, name, logo, email, phone_number, address }  
 
 ### 9.2 Database Requirements
 
