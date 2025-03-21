@@ -9,4 +9,4 @@ $(document).ready(function() {
     $('.btn-confirm').click(function() {
         alert('Payment confirmed!');
     });
-}); 
+});
