@@ -1,0 +1,79 @@
+<!-- Add hyperlinks to the page if needed (please base po sa figma) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carrot Air</title>
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap" rel="stylesheet">
+	
+	<!-- external css -->
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+	<div class="container mt-4">
+        <div class="payment-container">
+            <h4 class="payment-header">Payment</h4>
+            <div class="payment-details mb-3">
+                <div class="d-flex justify-content-between align-items-start">
+                    <img src="./images/cat_logo.png" alt="Flight Icon" class="img-fluid" width="50">
+                    <div class="text-end">
+                        <p class="mb-0"><img src="./images/clock.png"><i class="bi bi-clock"></i> 06/07/2023</p>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <p id=payment-display class="mb-0"><strong>5.50</strong>
+                    	<img src="./images/plane.png"> 
+                    	<strong>5.50</strong></p>
+
+                    <p>	LHR (Lahore) KCH (Karachi)</p>
+                    <hr>
+                    <p class="total-amount">Total: <strong>15,000 PKR</strong></p>
+                </div> 
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Card Number</label>
+                    <input type="text" class="form-control" placeholder="5300 0000 0000 0000" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Card Holder Name</label>
+                    <input type="text" class="form-control" placeholder="Husnain">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="form-control" placeholder="000">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Expiry Date</label>
+                        <input type="text" class="form-control" placeholder="05/24">
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <img src="./images/Mastercard.png" width="40">
+                    <img src="./images/Visa.png" width="40">
+                    <img src="./images/Paypal.png" width="60">
+                </div>
+                <button type="button" class="btn btn-danger btn-confirm mt-3">Confirm</button>
+                <button type="button" class="btn btn-outline-secondary btn-confirm mt-2">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+
+
+		<!-- bootstrap js -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+	    <!-- JavaScript -->
+	    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

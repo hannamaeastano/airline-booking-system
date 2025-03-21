@@ -1,0 +1,51 @@
+/* Input the correct value base on the typography and add other needed properties */
+body {
+    background-color: #f8f9fa;
+    font-family: Archivo;
+}
+.payment-container { 
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(215, 215, 215, 0.25);
+}
+.payment-header {
+    text-align: center;
+    font-family: Archivo;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+.payment-details {
+    background: #eef1f6;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+.payment-details img {
+    width: 69;
+    height: 69;
+    top: 105px;
+    left: 34px;
+}
+
+#payment-display {
+	font-family: Archivo;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: 0%;
+
+}
+
+.total-amount {
+    color: red;
+    font-weight: bold;
+}
+.btn-confirm {
+    width: 100%;
+}
