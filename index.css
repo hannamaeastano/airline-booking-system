@@ -12,8 +12,18 @@
 }
 
 
+.label-image
+{
+	max-width: 5%;
+}
+
+.orange-button
+{
+	background-color: #EC441E;
+	color: #FDEBE6;
+}
+
 #welcome-button
 {
 	color: #EC441E;
 }
-
