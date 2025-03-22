@@ -1,1 +1,19 @@
 /* Input the correct value base on the typography and add other needed properties */
+
+
+.orange-background /*for those spots where we need an orange bg*/
+{
+	background-color: #EC441E;
+}
+
+.carrot-logo
+{
+	max-width: 45%;
+}
+
+
+#welcome-button
+{
+	color: #EC441E;
+}
+
