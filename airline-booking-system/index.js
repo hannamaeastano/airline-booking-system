@@ -1,8 +1,7 @@
 /* Input the correct syntax */
 $(document).ready(function() {
-    // Set the real-time date
     const today = new Date();
-    const formattedDate = today.toLocaleDateString('en-GB'); // Format: DD/MM/YYYY
+    const formattedDate = today.toLocaleDateString('en-GB'); 
     $(".bi-clock").parent().text(` ${formattedDate}`);
     
     // Confirm button functionality

@@ -12,10 +12,13 @@
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900& family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap" rel="stylesheet">
 	
 	<!-- external css -->
 	<link rel="stylesheet" type="text/css" href="./index.css">
+
+	<!-- js -->
+	<script src="index.js"></script>
 </head>
 <body>
 	<div class="container mt-4">
@@ -29,19 +32,23 @@
                     </div>
                 </div>
                 <div class="text-center mt-2">
-                    <p id=payment-display class="mb-0"><strong>5.50</strong>
+                    <p id="payment-display" class="mb-0"><strong>5.50</strong>
                     	<img src="./images/plane.png"> 
                     	<strong>5.50</strong></p>
 
                     <p>	LHR (Lahore) KCH (Karachi)</p>
                     <hr>
-                    <p class="total-amount">Total: <strong>15,000 PKR</strong></p>
+                    <p class="total-amount">
+                        <span class="label">Total</span>
+                        <strong class="amount">15,000 PKR</strong>
+                    </p>
+
                 </div> 
             </div>
             <form>
                 <div class="mb-3">
                     <label class="form-label">Card Number</label>
-                    <input type="text" class="form-control" placeholder="5300 0000 0000 0000" >
+                    <input type="text" class="form-control" placeholder="5300 0000 0000 0000">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Card Holder Name</label>
@@ -58,8 +65,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-3">
-                    <img src="./images/Mastercard.png" width="40">
-                    <img src="./images/Visa.png" width="40">
+                    <img src="./images/stripe.png" width="40">
                     <img src="./images/Paypal.png" width="60">
                 </div>
                 <button type="button" class="btn btn-danger btn-confirm mt-3">Confirm</button>
