@@ -93,18 +93,19 @@ function updateFlightDetailsScreen() {
 
     document.getElementById("fromAirport").innerText = from;
     document.getElementById("toAirport").innerText = to;
-    document.getElementById("flightDate").innerText = date;
+    document.getElementById("flightDate").innerText = getDepartureDate();
     document.getElementById("flightPrice").innerText = price;
     document.getElementById("departureTime").innerText = departureTime;
     document.getElementById("arrivalTime").innerText = arrivalTime;
     document.getElementById("flightTime").innerText = departureTime;
+    document.getElementById("myDepartureDate").innerHTML = `<i class="fas fa-calendar-alt"></i> ${getDepartureDate()}`;
 }
 
 function checkFlightAvailability() {
     let from = document.getElementById("from").value;
     let to = document.getElementById("to").value;
     let date = document.querySelector("input[type='date']").value;
-    let price = "₱3,500"; 
+    let price = "₱3,500"; //Need to change to something dynamic~
 
     if (from === "Select your departure" || to === "Select your destination" || date === "") {
         alert("Please fill in all fields.");
@@ -125,13 +126,27 @@ function checkFlightAvailability() {
     updateFlightDetailsScreen();
 }
 
+function getNumberOfTravellers(){
+    const selectElement = document.getElementById('numberOfTravellers');
+
+    const selectedOption = selectElement.value;
+
+    return parseInt(selectedOption)
+}
+
+function getDepartureDate(){
+    const departureDate = document.querySelector('#departureDate').value;
+    sessionStorage.setItem('departureDate', departureDate);
+    console.log(departureDate);
+    return departureDate;
+
+}
 
 // Choose Seat Screen
 document.addEventListener("DOMContentLoaded", function () {
     const seatsContainer = document.querySelector(".seats-container");
     const rows = 6;
     const cols = 4;
-    
     const occupiedSeats = ["2B", "4D", "5C", "5D"]; // Example occupied seats
     let selectedSeats = []; // Array to track selected seats
 
@@ -159,17 +174,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (occupiedSeats.includes(seatLabels[i][j])) {
                 seat.classList.add("occupied");
-            } 
+            }
 
             seat.addEventListener("click", function () {
-                if (!seat.classList.contains("occupied")) {
-                    seat.classList.toggle("selected");
+                // Get the number of travellers allowed
+                const maxSeats = getNumberOfTravellers();
 
-                    const seatID = seat.textContent;
-                    if (selectedSeats.includes(seatID)) {
-                        selectedSeats = selectedSeats.filter(s => s !== seatID);
+                if (!seat.classList.contains("occupied")) {
+                    // Limit selection based on the number of travellers
+                    if (selectedSeats.length < maxSeats || seat.classList.contains("selected")) {
+                        seat.classList.toggle("selected");
+
+                        const seatID = seat.textContent;
+                        if (selectedSeats.includes(seatID)) {
+                            selectedSeats = selectedSeats.filter(s => s !== seatID);
+                        } else {
+                            selectedSeats.push(seatID);
+                        }
                     } else {
-                        selectedSeats.push(seatID);
+                        alert(`You can only select up to ${maxSeats} seats.`);
                     }
                 }
             });
@@ -178,14 +201,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-     window.confirmSelection = function (event) {
+    window.confirmSelection = function (event) {
         event.preventDefault(); // Prevent unintended form submission or navigation
+        
+        const maxSeats = getNumberOfTravellers();
         
         if (selectedSeats.length === 0) {
             alert("Please select at least one seat before proceeding.");
             return;
         }
-        
+
+        if (selectedSeats.length > maxSeats) {
+            alert(`You can only select up to ${maxSeats} seats.`);
+            return;
+        }
+
         if (typeof showScreen === "function") {
             showScreen("payment");
         } else {
@@ -219,3 +249,5 @@ function downloadBoardingPass() {
         alert("Downloading...");
         // Will add actual download functionality here if applicable/needed
     }
+
+

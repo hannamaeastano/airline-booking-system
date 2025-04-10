@@ -180,7 +180,7 @@
             </div>
                 <div class="mb-3">
                     <label>Departure</label>
-                    	<input type="date" class="form-control">
+                    	<input type="date" class="form-control" id="departureDate">
                 </div>
                 <div class="mb-3 return-date d-none">
                     <label>Return</label>
@@ -189,10 +189,10 @@
                 <div class="row">
                     <div class="col">
                         <label>Traveller</label>
-                        <select class="form-select">
-                            <option>1 Adult</option>
-                            <option>2 Adults</option>
-                            <option>Child</option>
+                        <select class="form-select" id="numberOfTravellers">
+                            <option value=1>1 Adult</option>
+                            <option value=2>2 Adults</option>
+                            <option value=1>Child</option>
                         </select>
                     </div>
                     <div class="col">
@@ -291,7 +291,7 @@
             <div class="flight-details-container">
                 <div class="flight-header">
                     <img src="./images/chubbycat.png" alt="chubby cat" class="flight-icon">
-                    <span class="flight-date"><i class="fas fa-calendar-alt"></i> 03/27/2025</span>
+                    <span class="flight-date" id="myDepartureDate"><i class="fas fa-calendar-alt"></i> </span>
                 </div>
                 <div class="flight-info">
                     <div class="flight-time">
