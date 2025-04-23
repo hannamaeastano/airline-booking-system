@@ -124,7 +124,7 @@
     	                <a onclick="showScreen('flightDetails')"><i class="fas fa-file-alt"></i> My Bookings</a>
                         <a onclick="showScreen('boardingPass')"><i class="fas fa-ticket-alt"></i> Boarding Pass</a>
                         <a onclick="showScreen('payment')"><i class="fas fa-credit-card"></i> Payment Method</a>
-                        <a onclick="showScreen('flightBooking')"><i class="fas fa-plane"></i> Flight</a>
+                        <a onclick="showScreen('flightDetails')"><i class="fas fa-plane"></i> Flight</a>
                         <hr>
                         <a onclick="showScreen('welcome')"><i class="fas fa-sign-out-alt"></i> Log out</a>
     	                <p class="text-center mt-3 p-5">App version 1.0.1</p>
@@ -203,8 +203,21 @@
                         </select>
                     </div>
                 </div>
-                <button class="btn btn-primary w-100 mt-3" onclick="checkFlightAvailability()">Confirm</button>
+                <button class="btn btn-primary w-100 mt-3" onclick="checkFlightAvailability()">Search</button>
             </div>
+        </div>
+    </div>
+
+<!-- Search Results Screen -->
+    <div class="screen d-none" id="searchResultsScreen">
+        <div class="container py-4">
+            <div class="header d-flex align-items-center mb-3">
+                <button class="btn btn-link" onclick="showScreen('flightBooking')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2 class="mx-auto">Search Results</h2>
+            </div>
+            <div id="searchResultsContainer"></div>
         </div>
     </div>
 

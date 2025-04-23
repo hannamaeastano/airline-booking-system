@@ -5,6 +5,9 @@ function showScreen(screenId) {
         screen.classList.add('d-none');
     });
     
+
+    console.log('Trying to show screen:', screenId + 'Screen');
+    console.log('Found:', document.getElementById(screenId + 'Screen'));
     // Show the requested screen
     document.getElementById(screenId + 'Screen').classList.remove('d-none');
 }
@@ -122,9 +125,17 @@ function checkFlightAvailability() {
     sessionStorage.setItem("date", date);
     sessionStorage.setItem("price", price);
 
+    /*showScreen('flightDetails');
+    updateFlightDetailsScreen();*/
+    renderSearchResults();
+}
+
+function showFlightDetails(){
+    console.log("showFlightDetails!!!")
     showScreen('flightDetails');
     updateFlightDetailsScreen();
 }
+
 
 function getNumberOfTravellers(){
     const selectElement = document.getElementById('numberOfTravellers');
@@ -250,4 +261,44 @@ function downloadBoardingPass() {
         // Will add actual download functionality here if applicable/needed
     }
 
+function renderSearchResults() {
+    const from = sessionStorage.getItem("from");
+    const to = sessionStorage.getItem("to");
+    const date = sessionStorage.getItem("date");
+
+    const resultsContainer = document.getElementById("searchResultsContainer");
+    resultsContainer.innerHTML = ""; // Clear any previous results
+
+    //this is mock data po, should be replaced~
+    const sampleFlights = [
+        {
+            airline: "ChubbyCat Air",
+            time: "10:00 AM - 12:00 PM",
+            price: "₱3,500",
+        },
+        {
+            airline: "FurFly Express",
+            time: "2:00 PM - 4:00 PM",
+            price: "₱20,000",
+        },
+    ];
+
+    // Dynamically generate search result cards
+    sampleFlights.forEach((flight) => {
+        const card = document.createElement("div");
+        card.className = "card p-3 mb-3 shadow-sm";
+
+        card.innerHTML = `
+            <h5>${flight.airline}</h5>
+            <p>${from} → ${to} | ${flight.time} | ${date}</p>
+            <p><strong>${flight.price}</strong></p>
+            <button class="btn btn-primary w-100 mt-3" onclick="showFlightDetails()">Select</button>
+        `;
+
+        resultsContainer.appendChild(card);
+    });
+    console.log("Rendering search results for", from, to, date); //check
+    // Show the search results screen
+    showScreen("searchResults");
+}
 
